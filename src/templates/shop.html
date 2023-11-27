@@ -12,7 +12,7 @@
 {% block cuerpo %}
     <script>
 
-        // Función para verificar si el usuario ha iniciado sesión
+        // verificar si el usuario ha iniciado sesión
         function checkUserLogin() {
             const userRole = "{{ current_user.get_user_type() }}";
             if (userRole !== "1" && userRole !== "2") {

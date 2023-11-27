@@ -10,3 +10,8 @@
     padding: 20px;
     margin-top: 20px;
 }
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: black !important; /* letras de la barra navegacion */
+}
