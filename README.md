@@ -4,6 +4,7 @@ Este proyecto es una tienda online que incluye un sistema de inicio de sesión. 
 
 ## Cómo Ejecutar el Proyecto
 1. Entorno virtual, abrimos CMD como administrador y nos dirigimos a la carpeta donde se encuentra el proyecto y creamos el entorno virtual:
+
 Crear un entorno virtual:
 py -m venv env
 
