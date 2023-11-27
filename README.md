@@ -14,7 +14,7 @@ env\Scripts\activate
 Instalar Flask en el entorno virtual:
 pip install Flask
 
-2. Instala las dependencias del proyecto ejecutando `pip install Flask`,`pip install Flask_MySQL`,`pip install Flask-Login`,`pip install Flask_Mysqldb`.
+2. Instala las dependencias del proyecto ejecutando `pip install Flask`,`pip install Flask_MySQL`,`pip install Flask-Login`,`pip install Flask_Mysqldb`,`Flask-WTF`.
 
 3. Nos dirigimos a donde este nuestro archivo python en este caso sera app.py .
 Asignamos el archivo principal
