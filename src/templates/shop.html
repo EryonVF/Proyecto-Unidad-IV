@@ -232,18 +232,14 @@ buttons.addEventListener("click", function (event) {
         // Si el usuario no es un administrador, oculta el contenido
         document.getElementById("adminContent").style.display = "none";
     
-}
+    }
     function logout() 
     {
         localStorage.removeItem("userRole");
-        window.location.href = "login.html"; // Redirige al usuario a la página de inicio de sesión
+        
     }
 
-     if (userRole === "admin") 
-    {
-        document.getElementById("adminContent").style.display = "block";
-    }
-
+  
 
     // Funciones JavaScript para la tienda (simulación)
     let availableProducts = JSON.parse(localStorage.getItem('products')) || [];

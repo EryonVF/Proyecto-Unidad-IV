@@ -91,18 +91,20 @@
     
     function logout() {
         localStorage.removeItem("userRole");
-        window.location.href = "login.html"; // Redirige al usuario a la página de inicio de sesión
+    //    window.location.href = "login.html"; // Redirige al usuario a la página de inicio de sesión
     }
 
     const userRole = localStorage.getItem("userRole");
 
-    if (userRole === "admin") {
+    if (userRole === "1") {
         // Si el usuario es un administrador, mostrar el botón "Catálogo de Productos"
         document.getElementById("adminContent").style.display = "block";
     } else {
         // Si el usuario es cliente, ocultar el botón "Catálogo de Productos"
         document.getElementById("adminContent").style.display = "none";
     }
+
+
     function validateAndAddProduct() {
         const productName = document.getElementById("productName").value;
         const productPrice = document.getElementById("productPrice").value;
