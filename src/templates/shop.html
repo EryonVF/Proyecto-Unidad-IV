@@ -268,7 +268,7 @@ buttons.addEventListener("click", function (event) {
     let availableProducts = JSON.parse(localStorage.getItem('products')) || [];
     let cartItems = [];
 
-    function addToCart(productId, quantity) {
+function addToCart(productId, quantity) {
         const productToAdd = availableProducts.find(product => product.id === productId);
         if (productToAdd) {
             // Agregar el producto al carrito
@@ -279,37 +279,45 @@ buttons.addEventListener("click", function (event) {
                 cartItems.push({ id: productToAdd.id, name: productToAdd.name, price: productToAdd.price, quantity });
             }
             updateCartContent();
-            
-        } 
+        }
     }
 
     function updateCartContent() {
-const resumenCompra = document.getElementById("resumenCompra");
-const total = document.getElementById("total");
-// Limpia el contenido anterior del resumen de compra
-resumenCompra.innerHTML = "";
+        const resumenCompra = document.getElementById("resumenCompra");
+        const total = document.getElementById("total");
+        resumenCompra.innerHTML = ""; // Limpia el contenido anterior del resumen de compra
 
-let subtotalTotal = 0;
+        let subtotalTotal = 0;
 
-cartItems.forEach(item => {
-    const subtotal = item.price * item.quantity;
-    subtotalTotal += subtotal;
+        cartItems.forEach(item => {
+            const subtotal = item.price * item.quantity;
+            subtotalTotal += subtotal;
 
-    const row = document.createElement("tr");
-    row.innerHTML = `
-        <td>${item.name}</td>
-     
-        <td>${item.quantity}</td>
-        <td>$${item.price}</td>
-        <td>$${subtotal}</td>
-    `;
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${item.name}</td>
+                <td>${item.quantity}</td>
+                <td>$${item.price}</td>
+                <td>$${subtotal.toFixed(2)}</td>
+            `;
 
-    resumenCompra.appendChild(row);
-});
+            resumenCompra.appendChild(row);
+        });
 
-// Actualiza el total
-total.textContent = `$${subtotalTotal}`;
-}
+        // Actualiza el total
+        total.textContent = `$${subtotalTotal.toFixed(2)}`;
+    }
+
+    // Asocia la función al evento de clic del botón "Comprar"
+    const botonComprar = document.getElementById("botonComprar");
+    botonComprar.addEventListener("click", function () {
+        // Lógica para procesar la compra o simplemente mostrar un mensaje
+        alert("Compra confirmada. Redirigiendo a la página de pago...");
+        updateProductList();
+        updateCartContent();
+
+    });
+
     function updateProductList() {
         const productContainer = document.getElementById("productContainer");
         productContainer.innerHTML = "";
@@ -455,12 +463,6 @@ tfoot {
     nuevaVentana.document.write(ticketContenido);
 }
 
-// Asocia la función al evento de clic del botón "Comprar"
-const botonComprar = document.getElementById("botonComprar");
-botonComprar.addEventListener("click", generarTicketDeCompra);
-    // Actualiza la lista de productos disponibles al cargar la página
-    updateProductList();
-    updateCartContent();
 
 
 </script>
