@@ -1,15 +1,14 @@
 /* Estilo para la página de inicio de sesión */
 
 body {
-    background-color: #fd8e8e;
+    background-color: #f8f9fa;
     font-family: 'Arial', sans-serif;
 }
 
 .login-container {
     max-width: 400px;
     margin: 50px auto;
-    text-align: center;
-    background-color: #ffffff;
+    background-color: #fff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

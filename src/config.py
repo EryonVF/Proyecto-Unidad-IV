@@ -1,8 +1,8 @@
 class DevelopmentConfig:
     DEBUG = True
     MYSQL_HOST = "localhost"
-    MYSQL_USER = "Eryon"
-    MYSQL_PASSWORD = "Eryon2209"
+    MYSQL_USER = "usuario1"
+    MYSQL_PASSWORD = "Sistemas1234"
     MYSQL_DB = "store"
     
 config = {
